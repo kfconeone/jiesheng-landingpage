@@ -1,0 +1,291 @@
+<script setup lang="ts"></script>
+
+<template>
+    <div>
+        <!-- Hero Section -->
+        <div class="bg-white">
+            <header class="absolute inset-x-0 top-0 z-50">
+                <div class="mx-auto max-w-7xl">
+                    <div class="px-6 pt-6 lg:max-w-2xl lg:pl-8 lg:pr-0">
+                        <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
+                            <a href="#" class="-m-1.5 p-1.5">
+                                <span class="sr-only">Your Company</span>
+                                <img alt="Your Company" class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600" />
+                            </a>
+                            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
+                                <span class="sr-only">Open main menu</span>
+                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                                </svg>
+                            </button>
+                            <div class="hidden lg:ml-12 lg:flex lg:gap-x-14">
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">服務介紹</a>
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">特色</a>
+
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">團隊介紹</a>
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">聯絡資訊</a>
+                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Blog</a>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <div class="relative">
+                <div class="mx-auto max-w-7xl">
+                    <div class="relative z-10 pt-14 lg:w-full lg:max-w-2xl">
+                        <svg class="absolute inset-y-0 right-8 hidden h-full w-80 translate-x-1/2 transform fill-white lg:block" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                            <polygon points="0,0 90,0 50,100 0,100" />
+                        </svg>
+
+                        <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
+                            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                                <div class="hidden sm:mb-10 sm:flex">
+                                    <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                                        想深入了解水電設計嗎? <a href="#" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                                    </div>
+                                </div>
+                                <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">電氣、弱電、給排水與管道設計</h1>
+                                <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供水電設計服務</p>
+                                <div class="mt-10 flex items-center gap-x-6">
+                                    <a href="#" class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">聯繫我們</a>
+                                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">了解服務 <span aria-hidden="true">→</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+                    <img class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt="" />
+                </div>
+            </div>
+        </div>
+        <!-- About us Section -->
+        <!-- Service Section -->
+        <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:text-center">
+                    <h2 class="text-base font-semibold leading-7 text-amber-600">專業、快速、透明</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">找不到水電設計技師嗎?</p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">您找到了！無論何種水電設計需求，我們都能提供最佳解決方案！</p>
+                </div>
+                <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                    <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                                    </svg>
+                                </div>
+                                電氣設計
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">包含建築物的電力系統、照明系統、通訊系統、監控系統等。電氣設計師需依據建築的用途、大小和安全要求等因素，計算和設計出符合需求的電氣系統，同時也需要考慮節能和環保等因素。</dd>
+                        </div>
+
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    </svg>
+                                </div>
+                                弱電設計
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">弱電設計是指建築物的低電壓電氣系統設計，主要包括通訊系統、監控系統、安全系統、多媒體系統等。弱電設計師需要了解各種系統的原理和規格，根據建築物的用途和要求進行系統設計和配置，並選擇合適的設備和材料。</dd>
+                        </div>
+
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </div>
+                                給排水設計
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">給排水設計是指建築物的水、氣管道系統設計，包括給水系統、排水系統和天然氣管道系統等。給排水設計師需要根據建築物的用途、大小和用水量等因素，計算和設計出符合需求的水、氣管道系統，同時也需要考慮節能和環保等因素。</dd>
+                        </div>
+
+                        <div class="relative pl-16">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                                    </svg>
+                                </div>
+                                管道設計
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">管道系統是指建築物的各種管道系統，包括給水管道、排水管道、天然氣管道、暖通空調管道、消防管道等。管道系統設計師需要根據建築物的用途、大小、功能和相關法律法規等要求，計算和設計出符合需求的管道系統，同時還需考慮節能、環保、安全等因素。</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <!-- CTA Section -->
+        <div class="bg-blue-500">
+            <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+                <div class="mx-auto max-w-2xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">無論規模大小<br />專業的水電設計與高品質服務</h2>
+                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300">無論您是小型建築師團隊或大型事務所公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">開始合作</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Feature Section -->
+        <div class="bg-white">
+            <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
+                <div class="mx-auto max-w-3xl text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">我們的特色</h2>
+                    <p class="mt-4 text-gray-500">我們的專業團隊由二十年以上水電設計公司資深專家與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
+                </div>
+
+                <div class="mt-16 space-y-16">
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+                        <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
+                            <h3 class="text-lg font-medium text-gray-900">Minimal and thoughtful</h3>
+                            <p class="mt-2 text-sm text-gray-500">Our laptop sleeve is compact and precisely fits 13&quot; devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.</p>
+                        </div>
+                        <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg" alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull." class="object-cover object-center" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+                        <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
+                            <h3 class="text-lg font-medium text-gray-900">Refined details</h3>
+                            <p class="mt-2 text-sm text-gray-500">We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.</p>
+                        </div>
+                        <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
+                                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg" alt="Detail of zipper pull with tan leather and silver rivet." class="object-cover object-center" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team Section -->
+        <div class="bg-white py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl sm:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">團隊介紹</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">我們是一個充滿年輕活力的團隊，致力於讓水電設計擺脫傳統產業的刻板印象，成為現代化的新興設計。</p>
+                </div>
+                <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
+                    <li class="flex flex-col gap-6 xl:flex-row">
+                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/jj.png" alt="" />
+                        <div class="flex-auto">
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Jeremy Huang</h3>
+                            <p class="text-base leading-7 text-gray-600">主要負責人</p>
+                            <p class="mt-6 text-base leading-7 text-gray-600">十年以上的水電技師，擁有豐富的水電設計專業知識和豐富的行業經驗，從小型透天厝到大型廠房、大樓住宅都有多年經驗。他負責團隊整體的規劃、指導和項目管理，確保每個項目都能夠按時交付、高品質地完成。</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col gap-6 xl:flex-row">
+                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/k.jpg" alt="" />
+                        <div class="flex-auto">
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Kevin Huang</h3>
+                            <p class="text-base leading-7 text-gray-600">系統主管</p>
+                            <p class="mt-6 text-base leading-7 text-gray-600">十年以上的程式全端工程師，他擁有先進的技術背景和豐富的專業經驗，負責專案管理與CRM系統。他能夠從技術角度對項目進行全面的規劃和設計，為客戶提供最佳服務。</p>
+                        </div>
+                    </li>
+                    <li class="flex flex-col gap-6 xl:flex-row">
+                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/q.png" alt="" />
+                        <div class="flex-auto">
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Q Ni Dan</h3>
+                            <p class="text-base leading-7 text-gray-600">資深設計師</p>
+                            <p class="mt-6 text-base leading-7 text-gray-600">十年以上的MEP設計經驗，負責提供高質量的設計方案，根據項目要求和客戶需求進行水電系統的設計和製圖，確保設計方案符合標準和要求。</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
+                <div
+                    class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
+                ></div>
+            </div>
+            <div class="mx-auto max-w-2xl text-center">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
+                <p class="mt-2 text-lg leading-8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+            </div>
+            <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+                <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
+                    <div>
+                        <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
+                    <div>
+                        <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
+                        <div class="mt-2.5">
+                            <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
+                        <div class="mt-2.5">
+                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
+                        <div class="relative mt-2.5">
+                            <div class="absolute inset-y-0 left-0 flex items-center">
+                                <label for="country" class="sr-only">Country</label>
+                                <select id="country" name="country" class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
+                                    <option>US</option>
+                                    <option>CA</option>
+                                    <option>EU</option>
+                                </select>
+                                <svg class="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                                </svg>
+                            </div>
+                            <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                        </div>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
+                        <div class="mt-2.5">
+                            <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                        </div>
+                    </div>
+                    <div class="flex gap-x-4 sm:col-span-2">
+                        <div class="flex h-6 items-center">
+                            <!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
+                            <button type="button" class="bg-gray-200 flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" role="switch" aria-checked="false" aria-labelledby="switch-1-label">
+                                <span class="sr-only">Agree to policies</span>
+                                <!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
+                                <span aria-hidden="true" class="translate-x-0 h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
+                            </button>
+                        </div>
+                        <label class="text-sm leading-6 text-gray-600" id="switch-1-label">
+                            By selecting this, you agree to our
+                            <a href="#" class="font-semibold text-indigo-600">privacy&nbsp;policy</a>.
+                        </label>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Let's talk</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</template>
