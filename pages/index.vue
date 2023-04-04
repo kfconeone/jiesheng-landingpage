@@ -45,8 +45,8 @@
                                         想深入了解水電設計嗎? <a href="#" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                                     </div>
                                 </div>
-                                <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">電氣、弱電、給排水與管道設計</h1>
-                                <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供水電設計服務</p>
+                                <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">捷勝設計</h1>
+                                <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供電氣、弱電、給排水與管道設計</p>
                                 <div class="mt-10 flex items-center gap-x-6">
                                     <a href="#" class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">聯繫我們</a>
                                     <a href="#" class="text-sm font-semibold leading-6 text-gray-900">了解服務 <span aria-hidden="true">→</span></a>
