@@ -1,4 +1,16 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { processExpression } from "@vue/compiler-core";
+import AOS from "aos";
+import "aos/dist/aos.css";
+var isMenuOpen = ref(false);
+// if (process.client) {
+// }
+
+onMounted(() => {
+    AOS.init();
+    AOS.refresh();
+});
+</script>
 
 <template>
     <div>
@@ -12,7 +24,7 @@
                                 <span class="sr-only">Your Company</span>
                                 <img alt="Your Company" class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600" />
                             </a>
-                            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden">
+                            <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden fixed right-6 top-6" @click="isMenuOpen = !isMenuOpen">
                                 <span class="sr-only">Open main menu</span>
                                 <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -27,8 +39,43 @@
                                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Blog</a>
                             </div>
                         </nav>
+                        <!-- Mobile menu, show/hide based on menu open state. -->
+                        <div role="dialog" aria-modal="true" v-show="isMenuOpen">
+                            <!-- Background backdrop, show/hide based on slide-over state. -->
+                            <div class="fixed inset-0 z-50"></div>
+                            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                                <div class="flex items-center justify-between">
+                                    <a href="#" class="-m-1.5 p-1.5">
+                                        <span class="sr-only">Your Company</span>
+                                        <img class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600" alt="" />
+                                    </a>
+                                    <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700" @click="isMenuOpen = !isMenuOpen">
+                                        <span class="sr-only">Close menu</span>
+                                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="mt-6 flow-root">
+                                    <div class="-my-6 divide-y divide-gray-500/10">
+                                        <div class="space-y-2 py-6">
+                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">服務介紹</a>
+
+                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">特色</a>
+
+                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">團隊介紹</a>
+
+                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">聯絡資訊</a>
+                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Mobile menu, show/hide based on menu open state. -->
             </header>
 
             <div class="relative">
@@ -39,7 +86,7 @@
                         </svg>
 
                         <div class="relative px-6 py-32 sm:py-40 lg:px-8 lg:py-56 lg:pr-0">
-                            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
+                            <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="hidden sm:mb-10 sm:flex">
                                     <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
                                         想深入了解水電設計嗎? <a href="#" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
@@ -65,13 +112,13 @@
         <div class="bg-white py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:text-center">
-                    <h2 class="text-base font-semibold leading-7 text-amber-600">專業、快速、透明</h2>
-                    <p class="mt-2 text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">找不到水電設計技師嗎?</p>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">您找到了！無論何種水電設計需求，我們都能提供最佳解決方案！</p>
+                    <h2 class="text-base font-semibold leading-7 text-amber-600" data-aos="fade-up">專業、快速、透明</h2>
+                    <p class="mt-2 text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up">找不到水電設計技師嗎?</p>
+                    <p class="mt-6 text-lg leading-8 text-gray-600" data-aos="fade-up">您找到了！無論何種水電設計需求，我們都能提供最佳解決方案！</p>
                 </div>
                 <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
                     <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
-                        <div class="relative pl-16">
+                        <div class="relative pl-16" data-aos="fade-up" data-aos-delay="50">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
                                     <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -83,7 +130,7 @@
                             <dd class="mt-2 text-base leading-7 text-gray-600">包含建築物的電力系統、照明系統、通訊系統、監控系統等。電氣設計師需依據建築的用途、大小和安全要求等因素，計算和設計出符合需求的電氣系統，同時也需要考慮節能和環保等因素。</dd>
                         </div>
 
-                        <div class="relative pl-16">
+                        <div class="relative pl-16" data-aos="fade-up" data-aos-delay="100">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
                                     <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -95,7 +142,7 @@
                             <dd class="mt-2 text-base leading-7 text-gray-600">弱電設計是指建築物的低電壓電氣系統設計，主要包括通訊系統、監控系統、安全系統、多媒體系統等。弱電設計師需要了解各種系統的原理和規格，根據建築物的用途和要求進行系統設計和配置，並選擇合適的設備和材料。</dd>
                         </div>
 
-                        <div class="relative pl-16">
+                        <div class="relative pl-16" data-aos="fade-up" data-aos-delay="150">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
                                     <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -107,7 +154,7 @@
                             <dd class="mt-2 text-base leading-7 text-gray-600">給排水設計是指建築物的水、氣管道系統設計，包括給水系統、排水系統和天然氣管道系統等。給排水設計師需要根據建築物的用途、大小和用水量等因素，計算和設計出符合需求的水、氣管道系統，同時也需要考慮節能和環保等因素。</dd>
                         </div>
 
-                        <div class="relative pl-16">
+                        <div class="relative pl-16" data-aos="fade-up" data-aos-delay="200">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
                                     <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -126,10 +173,10 @@
         <div class="bg-blue-500">
             <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">無論規模大小<br />專業的水電設計與高品質服務</h2>
-                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300">無論您是小型建築師團隊或大型事務所公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" data-aos="fade-up" data-aos-duration="750">無論規模大小<br />專業的水電設計與高品質服務</h2>
+                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">無論您是小型建築師團隊或大型事務所公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">開始合作</a>
+                        <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-aos="fade-up" data-aos-duration="750">開始合作</a>
                     </div>
                 </div>
             </div>
@@ -139,31 +186,55 @@
         <div class="bg-white">
             <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">我們的特色</h2>
-                    <p class="mt-4 text-gray-500">我們的專業團隊由二十年以上水電設計公司資深專家與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">我們的特色</h2>
+                    <p class="mt-4 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們的專業團隊由二十年以上水電設計公司資深專家與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
                 </div>
 
                 <div class="mt-16 space-y-16">
-                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-left" data-aos-duration="750">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
-                            <h3 class="text-lg font-medium text-gray-900">Minimal and thoughtful</h3>
-                            <p class="mt-2 text-sm text-gray-500">Our laptop sleeve is compact and precisely fits 13&quot; devices. The zipper allows you to access the interior with ease, and the front pouch provides a convenient place for your charger cable.</p>
+                            <h3 class="text-3xl font-bold text-gray-900">資深技師</h3>
+                            <p class="mt-2 text-gray-500">我們團隊的水電技師有十多年相關經驗，善於與建築師、工程師和營造團隊密切合作了解客戶的需求和要求，並為他們提供高品質的設計方案。</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
-                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-01.jpg" alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull." class="object-cover object-center" />
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
+                                <img src="@/assets/engineer-01.svg" alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull." class="object-cover object-center" />
                             </div>
                         </div>
                     </div>
 
-                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8">
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
-                            <h3 class="text-lg font-medium text-gray-900">Refined details</h3>
-                            <p class="mt-2 text-sm text-gray-500">We design every detail with the best materials and finishes. This laptop sleeve features durable canvas with double-stitched construction, a felt interior, and a high quality zipper that hold up to daily use.</p>
+                            <h3 class="text-3xl font-bold text-gray-900">從透天厝到大工廠</h3>
+                            <p class="mt-2 text-gray-500">從透天厝到大型住宅，從工廠到公共設施，我們的團隊對於各種類型和規模的項目都有處理經驗；您無需顧慮規模，放心交由我們處理吧！</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
-                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg bg-gray-100">
-                                <img src="https://tailwindui.com/img/ecommerce-images/product-feature-07-detail-02.jpg" alt="Detail of zipper pull with tan leather and silver rivet." class="object-cover object-center" />
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
+                                <img src="@/assets/Bungalow-01.svg" alt="Detail of zipper pull with tan leather and silver rivet." class="object-cover object-center" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-left" data-aos-duration="750">
+                        <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
+                            <h3 class="text-3xl font-bold text-gray-900">送審服務</h3>
+                            <p class="mt-2 text-gray-500">我們還提供文件送審服務，除了了解各種文件送審程序和要求，也會確保所有的文件都符合政府單位的要求和標準，同時跟進審批進度，確保在最短的時間內得到批准。</p>
+                        </div>
+                        <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
+                                <img src="@/assets/government-01.svg" alt="White canvas laptop sleeve with gray felt interior, silver zipper, and tan leather zipper pull." class="object-cover object-center" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
+                        <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
+                            <h3 class="text-3xl font-bold text-gray-900">作業順暢</h3>
+                            <p class="mt-2 text-gray-500">以優質的服務和專業的技術贏得了客戶的高度評價和信任。我們致力於為客戶提供最好的水電設計服務，我們的客戶都非常滿意！</p>
+                        </div>
+                        <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
+                            <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
+                                <img src="@/assets/architect-01.svg" alt="Detail of zipper pull with tan leather and silver rivet." class="object-cover object-center" />
                             </div>
                         </div>
                     </div>
@@ -174,11 +245,11 @@
         <div class="bg-white py-24 sm:py-32">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl sm:text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">團隊介紹</h2>
-                    <p class="mt-6 text-lg leading-8 text-gray-600">我們是一個充滿年輕活力的團隊，致力於讓水電設計擺脫傳統產業的刻板印象，成為現代化的新興設計。</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">團隊介紹</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-600" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們是一個充滿年輕活力的團隊，致力於讓水電設計擺脫傳統產業的刻板印象，成為現代化的新興設計。</p>
                 </div>
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
-                    <li class="flex flex-col gap-6 xl:flex-row">
+                    <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/jj.png" alt="" />
                         <div class="flex-auto">
                             <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Jeremy Huang</h3>
@@ -186,7 +257,7 @@
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的水電技師，擁有豐富的水電設計專業知識和豐富的行業經驗，從小型透天厝到大型廠房、大樓住宅都有多年經驗。他負責團隊整體的規劃、指導和項目管理，確保每個項目都能夠按時交付、高品質地完成。</p>
                         </div>
                     </li>
-                    <li class="flex flex-col gap-6 xl:flex-row">
+                    <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/k.jpg" alt="" />
                         <div class="flex-auto">
                             <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Kevin Huang</h3>
@@ -194,7 +265,7 @@
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的程式全端工程師，他擁有先進的技術背景和豐富的專業經驗，負責專案管理與CRM系統。他能夠從技術角度對項目進行全面的規劃和設計，為客戶提供最佳服務。</p>
                         </div>
                     </li>
-                    <li class="flex flex-col gap-6 xl:flex-row">
+                    <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/q.png" alt="" />
                         <div class="flex-auto">
                             <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Q Ni Dan</h3>
