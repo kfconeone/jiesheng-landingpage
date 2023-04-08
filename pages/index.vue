@@ -3,9 +3,13 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import gsap from "gsap";
+const tags = await useAsyncData<any>("categories", () => $fetch("http://jiesheng.3.36.56.224.nip.io/wp-json/wp/v2/tags"));
+const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
+
 var isMenuOpen = ref(false);
 var isContactOpen = ref(false);
 var heroRef = ref();
+
 const contactUsForm = ref({
     name: "",
     company: "",
@@ -16,7 +20,6 @@ const contactUsForm = ref({
 onMounted(() => {
     AOS.init();
     AOS.refresh();
-    console.log(heroRef.value);
 
     gsap.to(heroRef.value, {
         objectPosition: "0% 0%",
@@ -28,7 +31,6 @@ onMounted(() => {
 });
 
 function onContactUsClicked() {
-    console.log("contact us clicked");
     // post contact api
     // send email
     sendEmail();
@@ -65,6 +67,13 @@ async function sendEmail() {
 </script>
 
 <template>
+    <Head>
+        <Title>捷勝設計 - 專業的水電設計團隊</Title>
+        <Meta name="description" content="捷勝設計，專業的水電設計團隊" />
+        <Meta name="og:title" content="捷勝設計，專業的水電設計團隊" />
+        <Meta name="og:description" content="捷勝設計，專業的水電設計團隊" />
+        <Meta name="keywords" :content="tagStrings" />
+    </Head>
     <div>
         <!-- Hero Section -->
         <div class="bg-white">
@@ -88,7 +97,7 @@ async function sendEmail() {
 
                                 <a href="#team-section" class="text-sm font-semibold leading-6 text-gray-900">團隊介紹</a>
                                 <a href="#contact-section" class="text-sm font-semibold leading-6 text-gray-900">聯絡資訊</a>
-                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Blog</a>
+                                <a href="/blog?page=1" class="text-sm font-semibold leading-6 text-gray-900">Blog</a>
                             </div>
                         </nav>
                         <!-- Mobile menu, show/hide based on menu open state. -->
@@ -118,7 +127,7 @@ async function sendEmail() {
                                             <a href="#team-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">關於我們</a>
 
                                             <a href="#contact-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">聯絡資訊</a>
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</a>
+                                            <a href="/blog?page=1" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</a>
                                         </div>
                                     </div>
                                 </div>
@@ -141,7 +150,7 @@ async function sendEmail() {
                             <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl" data-aos="fade-up" data-aos-duration="1000">
                                 <div class="hidden sm:mb-10 sm:flex">
                                     <div class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                                        想深入了解水電設計嗎? <a href="#" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                                        想深入了解水電設計嗎? <a href="/blog?page=1" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                                     </div>
                                 </div>
                                 <!-- <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">捷勝設計</h1> -->
