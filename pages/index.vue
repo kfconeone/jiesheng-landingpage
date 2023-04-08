@@ -389,7 +389,7 @@ async function sendEmail() {
                 <a href="https://lin.ee/14N72sU">
                     <div class="font-bold text-xl mb-2 text-center">捷勝設計</div>
                 </a>
-                <p class="text-gray-700 text-base">加入官方號直接與我們聯繫！</p>
+                <p class="text-gray-700 text-base">點擊上方官方號直接與我們聯繫！</p>
             </div>
         </div>
         <img src="@/assets/line-logo.png" class="absolute right-0 bottom-0 w-12 h-12 lg:w-16 lg:h-16" @click="isContactOpen = true" />
