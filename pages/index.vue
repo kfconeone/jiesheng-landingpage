@@ -3,9 +3,10 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import gsap from "gsap";
-const tags = await useAsyncData<any>("categories", () => $fetch("http://jiesheng.3.36.56.224.nip.io/wp-json/wp/v2/tags"));
+const tags = await useAsyncData<any>("categories", () => $fetch("/api/tags"));
 const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
 
+// console.log(tagStrings);
 var isMenuOpen = ref(false);
 var isContactOpen = ref(false);
 var heroRef = ref();
