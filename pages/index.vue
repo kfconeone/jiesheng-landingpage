@@ -377,7 +377,7 @@ async function sendEmail() {
     </div>
     <br />
     <div class="fixed bottom-4 right-4">
-        <div class="max-w-xs lg:flex rounded shadow-lg bg-white relative z-10 pt-8" :class="isContactOpen ? '' : 'invisible'">
+        <div class="max-w-xs rounded shadow-lg bg-white relative z-10 pt-8" :class="isContactOpen ? '' : 'invisible'">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute right-2 top-2" @click="isContactOpen = false">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -389,7 +389,7 @@ async function sendEmail() {
                 <a href="https://lin.ee/14N72sU">
                     <div class="font-bold text-xl mb-2 text-center">捷勝設計</div>
                 </a>
-                <p class="text-gray-700 text-base">點擊上方官方號直接與我們聯繫！</p>
+                <p class="text-gray-700 text-base">點擊QRCode直接與我們聯繫！</p>
             </div>
         </div>
         <img src="@/assets/line-logo.png" class="absolute right-0 bottom-0 w-12 h-12 lg:w-16 lg:h-16" @click="isContactOpen = true" />
