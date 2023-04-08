@@ -24,7 +24,7 @@ onMounted(() => {
 
     gsap.to(heroRef.value, {
         objectPosition: "0% 0%",
-        duration: 50,
+        duration: 120,
         repeat: -1, // set repeat to -1 to loop indefinitely
         yoyo: true,
         ease: "none",
