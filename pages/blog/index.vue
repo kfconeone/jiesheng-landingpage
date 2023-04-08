@@ -53,9 +53,6 @@ const getCategoryName = (id: number) => {
                                 {{ post.title.rendered }}
                             </a>
                         </h3>
-                        <div v-if="post._embedded['wp:featuredmedia'] != undefined">
-                            <img :src="post._embedded['wp:featuredmedia'][0].source_url" class="w-full h-64 object-cover" />
-                        </div>
 
                         <div v-html="post.excerpt.rendered"></div>
                     </div>
