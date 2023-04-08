@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 var isMenuOpen = ref(false);
+var isContactOpen = ref(false);
 const contactUsForm = ref({
     name: "",
     company: "",
@@ -294,9 +295,7 @@ async function sendEmail() {
                 </div>
                 <br />
                 <div class="mx-auto max-w-2xl sm:text-center" data-aos="fade-up" data-aos-duration="750">
-                    <video controls id="myVideo">
-                        <source src="@/assets/intro.mp4" type="video/mp4" />
-                    </video>
+                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/KPAl35s7Jow" title="捷勝設計" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
@@ -374,15 +373,22 @@ async function sendEmail() {
                     <button type="button" @click="onContactUsClicked" class="block w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">立刻聯絡</button>
                 </div>
             </form>
-            <div class="max-w-xs flex rounded overflow-hidden shadow-lg absolute top-[20%] right-10" data-aos="fade-left" data-aos-duration="750" data-aos-delay="150">
-                <img class="w-40 h-40" src="https://qr-official.line.me/gs/M_761lwoyv_GW.png" />
-
-                <div class="px-6 py-4">
-                    <div class="font-bold text-xl mb-2">捷勝設計</div>
-                    <p class="text-gray-700 text-base">或加入官方號直接與我們聯繫！</p>
-                </div>
-            </div>
         </div>
     </div>
     <br />
+    <div class="fixed bottom-4 right-4">
+        <div class="max-w-xs lg:flex rounded shadow-lg bg-white relative z-10 pt-8" :class="isContactOpen ? '' : 'invisible'">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute right-2 top-2" @click="isContactOpen = false">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+
+            <img class="w-40 h-40 mx-auto" src="https://qr-official.line.me/gs/M_761lwoyv_GW.png" />
+
+            <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">捷勝設計</div>
+                <p class="text-gray-700 text-base">加入官方號直接與我們聯繫！</p>
+            </div>
+        </div>
+        <img src="@/assets/line-logo.png" class="absolute right-0 bottom-0 w-12 h-12 lg:w-16 lg:h-16" @click="isContactOpen = true" />
+    </div>
 </template>
