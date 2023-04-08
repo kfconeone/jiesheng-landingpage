@@ -2,8 +2,10 @@
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import gsap from "gsap";
 var isMenuOpen = ref(false);
 var isContactOpen = ref(false);
+var heroRef = ref();
 const contactUsForm = ref({
     name: "",
     company: "",
@@ -14,6 +16,15 @@ const contactUsForm = ref({
 onMounted(() => {
     AOS.init();
     AOS.refresh();
+    console.log(heroRef.value);
+
+    gsap.to(heroRef.value, {
+        objectPosition: "0% 0%",
+        duration: 30,
+        repeat: -1, // set repeat to -1 to loop indefinitely
+        yoyo: true,
+        ease: "none",
+    });
 });
 
 function onContactUsClicked() {
@@ -147,7 +158,7 @@ async function sendEmail() {
                     </div>
                 </div>
                 <div class="bg-gray-50 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-                    <img class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full" src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1587&q=80" alt="" />
+                    <img ref="heroRef" class="aspect-[3/2] object-cover lg:aspect-auto lg:h-full lg:w-full" src="@/assets/hero.jpg" alt="" />
                 </div>
             </div>
         </div>
