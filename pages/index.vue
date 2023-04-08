@@ -1,15 +1,55 @@
 <script setup lang="ts">
-import { processExpression } from "@vue/compiler-core";
+import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 var isMenuOpen = ref(false);
-// if (process.client) {
-// }
-
+const contactUsForm = ref({
+    name: "",
+    company: "",
+    email: "",
+    phone: "",
+    message: "",
+});
 onMounted(() => {
     AOS.init();
     AOS.refresh();
 });
+
+function onContactUsClicked() {
+    console.log("contact us clicked");
+    // post contact api
+    // send email
+    sendEmail();
+}
+
+async function sendEmail() {
+    if (contactUsForm.value.name == "" || contactUsForm.value.email == "" || contactUsForm.value.message == "") {
+        Swal.fire({
+            icon: "error",
+            title: "錯誤",
+            text: "請填寫必填欄位",
+        });
+        return;
+    }
+    await useFetch("/api/contact", {
+        method: "POST",
+        body: contactUsForm.value,
+    });
+
+    Swal.fire({
+        icon: "success",
+        title: "成功",
+        text: "我們已收到您的訊息，將盡快與您聯繫",
+    });
+
+    contactUsForm.value = {
+        name: "",
+        company: "",
+        email: "",
+        phone: "",
+        message: "",
+    };
+}
 </script>
 
 <template>
@@ -22,7 +62,7 @@ onMounted(() => {
                         <nav class="flex items-center justify-between lg:justify-start" aria-label="Global">
                             <a href="#" class="-m-1.5 p-1.5">
                                 <span class="sr-only">Your Company</span>
-                                <img alt="Your Company" class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600" />
+                                <!-- <img alt="Your Company" class="h-8 w-auto" src="https://tailwindui.com/img/logos/mark.svg?color=blue&shade=600" /> -->
                             </a>
                             <button type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700 lg:hidden fixed right-6 top-6" @click="isMenuOpen = !isMenuOpen">
                                 <span class="sr-only">Open main menu</span>
@@ -31,11 +71,11 @@ onMounted(() => {
                                 </svg>
                             </button>
                             <div class="hidden lg:ml-12 lg:flex lg:gap-x-14">
-                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">服務介紹</a>
-                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">特色</a>
+                                <a href="#service-section" class="text-sm font-semibold leading-6 text-gray-900">服務介紹</a>
+                                <a href="#feature-section" class="text-sm font-semibold leading-6 text-gray-900">特色</a>
 
-                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">團隊介紹</a>
-                                <a href="#" class="text-sm font-semibold leading-6 text-gray-900">聯絡資訊</a>
+                                <a href="#team-section" class="text-sm font-semibold leading-6 text-gray-900">團隊介紹</a>
+                                <a href="#contact-section" class="text-sm font-semibold leading-6 text-gray-900">聯絡資訊</a>
                                 <a href="#" class="text-sm font-semibold leading-6 text-gray-900">Blog</a>
                             </div>
                         </nav>
@@ -59,13 +99,13 @@ onMounted(() => {
                                 <div class="mt-6 flow-root">
                                     <div class="-my-6 divide-y divide-gray-500/10">
                                         <div class="space-y-2 py-6">
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">服務介紹</a>
+                                            <a href="#service-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">服務介紹</a>
 
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">特色</a>
+                                            <a href="#feature-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">特色</a>
 
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">團隊介紹</a>
+                                            <a href="#team-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">關於我們</a>
 
-                                            <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">聯絡資訊</a>
+                                            <a href="#contact-section" @click="isMenuOpen = false" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">聯絡資訊</a>
                                             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Blog</a>
                                         </div>
                                     </div>
@@ -92,11 +132,14 @@ onMounted(() => {
                                         想深入了解水電設計嗎? <a href="#" class="whitespace-nowrap font-semibold text-blue-500"><span class="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                                     </div>
                                 </div>
-                                <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">捷勝設計</h1>
+                                <!-- <h1 class="text-4xl font-bold tracking-tight text-blue-800 sm:text-6xl">捷勝設計</h1> -->
+                                <div>
+                                    <img src="@/assets/logo.png" alt="logo" class="" />
+                                </div>
                                 <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供電氣、弱電、給排水與管道設計</p>
                                 <div class="mt-10 flex items-center gap-x-6">
-                                    <a href="#" class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">聯繫我們</a>
-                                    <a href="#" class="text-sm font-semibold leading-6 text-gray-900">了解服務 <span aria-hidden="true">→</span></a>
+                                    <a href="#contact-section" class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">聯繫我們</a>
+                                    <a href="#service-section" class="text-sm font-semibold leading-6 text-gray-900">了解服務 <span aria-hidden="true">→</span></a>
                                 </div>
                             </div>
                         </div>
@@ -109,7 +152,7 @@ onMounted(() => {
         </div>
         <!-- About us Section -->
         <!-- Service Section -->
-        <div class="bg-white py-24 sm:py-32">
+        <div class="bg-white py-24 sm:py-32" id="service-section">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl lg:text-center">
                     <h2 class="text-base font-semibold leading-7 text-amber-600" data-aos="fade-up">專業、快速、透明</h2>
@@ -176,14 +219,14 @@ onMounted(() => {
                     <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" data-aos="fade-up" data-aos-duration="750">無論規模大小<br />專業的水電設計與高品質服務</h2>
                     <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">無論您是小型建築師團隊或大型事務所公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
-                        <a href="#" class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-blue-500 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-aos="fade-up" data-aos-duration="750">開始合作</a>
+                        <a href="#contact-section" class="rounded-md bg-amber-300 p-8 py-4 text-4xl font-semibold text-blue-800 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-aos="fade-up" data-aos-duration="750">開始合作</a>
                     </div>
                 </div>
             </div>
         </div>
 
         <!-- Feature Section -->
-        <div class="bg-white">
+        <div class="bg-white overflow-x-hidden" id="feature-section">
             <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">我們的特色</h2>
@@ -241,18 +284,25 @@ onMounted(() => {
                 </div>
             </div>
         </div>
+
         <!-- Team Section -->
-        <div class="bg-white py-24 sm:py-32">
+        <div class="bg-white py-24 sm:py-32" id="team-section">
             <div class="mx-auto max-w-7xl px-6 lg:px-8">
                 <div class="mx-auto max-w-2xl sm:text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">團隊介紹</h2>
                     <p class="mt-6 text-lg leading-8 text-gray-600" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們是一個充滿年輕活力的團隊，致力於讓水電設計擺脫傳統產業的刻板印象，成為現代化的新興設計。</p>
                 </div>
+                <br />
+                <div class="mx-auto max-w-2xl sm:text-center" data-aos="fade-up" data-aos-duration="750">
+                    <video controls id="myVideo">
+                        <source src="@/assets/intro.mp4" type="video/mp4" />
+                    </video>
+                </div>
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/jj.png" alt="" />
                         <div class="flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Jeremy Huang</h3>
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Jeremy 黃</h3>
                             <p class="text-base leading-7 text-gray-600">主要負責人</p>
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的水電技師，擁有豐富的水電設計專業知識和豐富的行業經驗，從小型透天厝到大型廠房、大樓住宅都有多年經驗。他負責團隊整體的規劃、指導和項目管理，確保每個項目都能夠按時交付、高品質地完成。</p>
                         </div>
@@ -260,7 +310,7 @@ onMounted(() => {
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/k.jpg" alt="" />
                         <div class="flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Kevin Huang</h3>
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Kevin 黃</h3>
                             <p class="text-base leading-7 text-gray-600">系統主管</p>
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的程式全端工程師，他擁有先進的技術背景和豐富的專業經驗，負責專案管理與CRM系統。他能夠從技術角度對項目進行全面的規劃和設計，為客戶提供最佳服務。</p>
                         </div>
@@ -268,7 +318,7 @@ onMounted(() => {
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/q.png" alt="" />
                         <div class="flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-gray-900">Q Ni Dan</h3>
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Q Ni Dan</h3>
                             <p class="text-base leading-7 text-gray-600">資深設計師</p>
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的MEP設計經驗，負責提供高質量的設計方案，根據項目要求和客戶需求進行水電系統的設計和製圖，確保設計方案符合標準和要求。</p>
                         </div>
@@ -278,85 +328,61 @@ onMounted(() => {
         </div>
 
         <!-- Contact Section -->
-        <div class="isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
-            <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true">
-                <div
-                    class="relative left-1/2 -z-10 aspect-[1155/678] w-[36.125rem] max-w-none -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-40rem)] sm:w-[72.1875rem]"
-                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"
-                ></div>
-            </div>
+        <div class="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 overflow-x-hidden" id="contact-section">
+            <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true"></div>
             <div class="mx-auto max-w-2xl text-center">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Contact sales</h2>
-                <p class="mt-2 text-lg leading-8 text-gray-600">Aute magna irure deserunt veniam aliqua magna enim voluptate.</p>
+                <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl">聯絡我們</h2>
+                <p class="mt-2 text-lg leading-8 text-gray-600">請留下您的基本資訊和需求，我們會由專人跟您聯繫！</p>
             </div>
-            <form action="#" method="POST" class="mx-auto mt-16 max-w-xl sm:mt-20">
+            <form action="#" method="POST" class="mx-auto max-w-xl mt-8">
                 <div class="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                     <div>
-                        <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">First name</label>
+                        <label for="first-name" class="block text-sm font-semibold leading-6 text-gray-900">如何稱呼</label>
                         <div class="mt-2.5">
-                            <input type="text" name="first-name" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
-                        </div>
-                    </div>
-                    <div>
-                        <label for="last-name" class="block text-sm font-semibold leading-6 text-gray-900">Last name</label>
-                        <div class="mt-2.5">
-                            <input type="text" name="last-name" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input type="text" v-model="contactUsForm.name" name="first-name" id="first-name" placeholder="王先生 / 小姐" autocomplete="given-name" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                     <div class="sm:col-span-2">
-                        <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">Company</label>
+                        <label for="company" class="block text-sm font-semibold leading-6 text-gray-900">公司/事務所名稱</label>
                         <div class="mt-2.5">
-                            <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input type="text" name="company" id="company" v-model="contactUsForm.company" placeholder="XX建築師事務所 / OO營造" autocomplete="organization" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                     <div class="sm:col-span-2">
                         <label for="email" class="block text-sm font-semibold leading-6 text-gray-900">Email</label>
                         <div class="mt-2.5">
-                            <input type="email" name="email" id="email" autocomplete="email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input type="email" name="email" id="email" autocomplete="email" v-model="contactUsForm.email" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                     <div class="sm:col-span-2">
-                        <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">Phone number</label>
+                        <label for="phone-number" class="block text-sm font-semibold leading-6 text-gray-900">連絡電話</label>
                         <div class="relative mt-2.5">
-                            <div class="absolute inset-y-0 left-0 flex items-center">
-                                <label for="country" class="sr-only">Country</label>
-                                <select id="country" name="country" class="h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm">
-                                    <option>US</option>
-                                    <option>CA</option>
-                                    <option>EU</option>
-                                </select>
-                                <svg class="pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                    <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
-                                </svg>
-                            </div>
-                            <input type="tel" name="phone-number" id="phone-number" autocomplete="tel" class="block w-full rounded-md border-0 px-3.5 py-2 pl-20 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" />
+                            <input type="tel" name="phone-number" id="phone-number" v-model="contactUsForm.phone" autocomplete="tel" class="block w-full rounded-md border-0 px-3.5 py-2 pl-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6" />
                         </div>
                     </div>
                     <div class="sm:col-span-2">
-                        <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">Message</label>
+                        <label for="message" class="block text-sm font-semibold leading-6 text-gray-900">您的需求</label>
                         <div class="mt-2.5">
-                            <textarea name="message" id="message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                            <textarea name="message" id="message" v-model="contactUsForm.message" rows="4" class="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"></textarea>
                         </div>
                     </div>
                     <div class="flex gap-x-4 sm:col-span-2">
-                        <div class="flex h-6 items-center">
-                            <!-- Enabled: "bg-indigo-600", Not Enabled: "bg-gray-200" -->
-                            <button type="button" class="bg-gray-200 flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600" role="switch" aria-checked="false" aria-labelledby="switch-1-label">
-                                <span class="sr-only">Agree to policies</span>
-                                <!-- Enabled: "translate-x-3.5", Not Enabled: "translate-x-0" -->
-                                <span aria-hidden="true" class="translate-x-0 h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out"></span>
-                            </button>
-                        </div>
-                        <label class="text-sm leading-6 text-gray-600" id="switch-1-label">
-                            By selecting this, you agree to our
-                            <a href="#" class="font-semibold text-indigo-600">privacy&nbsp;policy</a>.
-                        </label>
+                        <label class="text-sm leading-6 text-gray-600" id="switch-1-label"> *上述訊息僅供聯絡用途，不會用於其他用途。 </label>
                     </div>
                 </div>
                 <div class="mt-10">
-                    <button type="submit" class="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Let's talk</button>
+                    <button type="button" @click="onContactUsClicked" class="block w-full rounded-md bg-blue-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">立刻聯絡</button>
                 </div>
             </form>
+            <div class="max-w-xs flex rounded overflow-hidden shadow-lg absolute top-[20%] right-10" data-aos="fade-left" data-aos-duration="750" data-aos-delay="150">
+                <img class="w-40 h-40" src="https://qr-official.line.me/gs/M_761lwoyv_GW.png" />
+
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">捷勝設計</div>
+                    <p class="text-gray-700 text-base">或加入官方號直接與我們聯繫！</p>
+                </div>
+            </div>
         </div>
     </div>
+    <br />
 </template>
