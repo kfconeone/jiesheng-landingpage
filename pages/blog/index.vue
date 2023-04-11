@@ -6,14 +6,13 @@ const currentPage = Number(route.query.page) || 1;
 const posts = await useAsyncData<any>("posts", () => $fetch("/api/posts?per_page=10&page=" + currentPage));
 const categories = await useAsyncData<any>("categories", () => $fetch("/api/categories"));
 // const tags = await useAsyncData<any>("categories", () => $fetch("http://jiesheng.3.36.56.224.nip.io/wp-json/wp/v2/tags"));
-const tags = await useAsyncData<any>("categories", () => $fetch("/api/tags"));
+const tags = await useAsyncData<any>("tags", () => $fetch("/api/tags"));
 
 const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
 
 // const postTotalPage = postResponse.headers.get("X-WP-TotalPages") != null ? Number(postResponse.headers.get("X-WP-TotalPages")) : 1;
-
-// console.log(tagStrings);
-
+// console.log(posts.data.value);
+console.log(categories.data.value);
 const getCategoryName = (id: number) => {
     const category = categories.data.value.find((category: any) => category.id === id);
     if (category == null || category == undefined) return "";
@@ -54,7 +53,7 @@ const getCategoryName = (id: number) => {
                             </a>
                         </h3>
 
-                        <div v-html="post.excerpt.rendered"></div>
+                        <div v-html="post.excerpt.rendered" class="mt-3 text-base text-gray-500"></div>
                     </div>
                 </article>
             </div>

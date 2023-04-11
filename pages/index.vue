@@ -158,7 +158,7 @@ async function sendEmail() {
                                 <div>
                                     <img src="@/assets/logo.png" alt="logo" class="" />
                                 </div>
-                                <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供電氣、弱電、給排水與管道設計</p>
+                                <p class="mt-6 text-lg leading-8 text-gray-600">由專業團隊為建築師們和營造廠商提供電氣、弱電、給排水設計</p>
                                 <div class="mt-10 flex items-center gap-x-6">
                                     <a href="#contact-section" class="rounded-md bg-blue-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-500">聯繫我們</a>
                                     <a href="#service-section" class="text-sm font-semibold leading-6 text-gray-900">了解服務 <span aria-hidden="true">→</span></a>
@@ -192,7 +192,7 @@ async function sendEmail() {
                                 </div>
                                 電氣設計
                             </dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">包含建築物的電力系統、照明系統、通訊系統、監控系統等。電氣設計師需依據建築的用途、大小和安全要求等因素，計算和設計出符合需求的電氣系統，同時也需要考慮節能和環保等因素。</dd>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">包含建築物的電力、照明系統等。設計師依據建築的用途、大小和安全法規等因素，計算並設計出符合需求的電氣系統，同時也考慮節能和環保等因素。</dd>
                         </div>
 
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="100">
@@ -204,7 +204,7 @@ async function sendEmail() {
                                 </div>
                                 弱電設計
                             </dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">弱電設計是指建築物的低電壓電氣系統設計，主要包括通訊系統、監控系統、安全系統、多媒體系統等。弱電設計師需要了解各種系統的原理和規格，根據建築物的用途和要求進行系統設計和配置，並選擇合適的設備和材料。</dd>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">包含通訊、監控、門禁保全、多媒體系統等。根據建築物的用途和法規設計和配置，並選擇合適的設備。</dd>
                         </div>
 
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="150">
@@ -216,7 +216,19 @@ async function sendEmail() {
                                 </div>
                                 給排水設計
                             </dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">給排水設計是指建築物的水、氣管道系統設計，包括給水系統、排水系統和天然氣管道系統等。給排水設計師需要根據建築物的用途、大小和用水量等因素，計算和設計出符合需求的水、氣管道系統，同時也需要考慮節能和環保等因素。</dd>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">包含自來水、排水系統等。根據建築物的用途、法規和用水量等因素，計算和設計出符合需求的給排水管道，同時也需要考慮節能和環保等因素。</dd>
+                        </div>
+
+                        <div class="relative pl-16" data-aos="fade-up" data-aos-delay="150">
+                            <dt class="text-base font-semibold leading-7 text-gray-900">
+                                <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
+                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    </svg>
+                                </div>
+                                消防設計
+                            </dt>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">根據消防法規，設計出建築物需要的消防系統。</dd>
                         </div>
 
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="200">
@@ -226,9 +238,9 @@ async function sendEmail() {
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
                                     </svg>
                                 </div>
-                                管道設計
+                                送審服務
                             </dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">管道系統是指建築物的各種管道系統，包括給水管道、排水管道、天然氣管道、暖通空調管道、消防管道等。管道系統設計師需要根據建築物的用途、大小、功能和相關法律法規等要求，計算和設計出符合需求的管道系統，同時還需考慮節能、環保、安全等因素。</dd>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">我們提供設計送審服務，讓您的建築項目快速且順利的通過審查程序！</dd>
                         </div>
                     </dl>
                 </div>
@@ -238,8 +250,8 @@ async function sendEmail() {
         <div class="bg-blue-500">
             <div class="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
                 <div class="mx-auto max-w-2xl text-center">
-                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" data-aos="fade-up" data-aos-duration="750">無論規模大小<br />專業的水電設計與高品質服務</h2>
-                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">無論您是小型建築師團隊或大型事務所公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
+                    <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl" data-aos="fade-up" data-aos-duration="750">提供專業的水電設計與高品質服務</h2>
+                    <p class="mx-auto mt-6 max-w-xl text-lg leading-8 text-amber-300" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">無論您是小型建築師事務所或大型建設公司，我們都能夠提供高品質、專業的水電設計服務。立即聯繫我們，讓我們一同打造卓越的建築項目！</p>
                     <div class="mt-10 flex items-center justify-center gap-x-6">
                         <a href="#contact-section" class="rounded-md bg-amber-300 p-8 py-4 text-4xl font-semibold text-blue-800 shadow-sm hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" data-aos="fade-up" data-aos-duration="750">開始合作</a>
                     </div>
@@ -252,7 +264,7 @@ async function sendEmail() {
             <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
                 <div class="mx-auto max-w-3xl text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">我們的特色</h2>
-                    <p class="mt-4 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們的專業團隊由二十年以上水電設計公司資深專家與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
+                    <p class="mt-4 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們的專業團隊由資深設計師與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
                 </div>
 
                 <div class="mt-16 space-y-16">
@@ -271,7 +283,7 @@ async function sendEmail() {
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
                             <h3 class="text-3xl font-bold text-gray-900">從透天厝到大工廠</h3>
-                            <p class="mt-2 text-gray-500">從透天厝到大型住宅，從工廠到公共設施，我們的團隊對於各種類型和規模的項目都有處理經驗；您無需顧慮規模，放心交由我們處理吧！</p>
+                            <p class="mt-2 text-gray-500">從透天厝到集合住宅，從小工廠到系統廠，我們的團隊對於各種類型和規模的項目都有處理經驗；您無需顧慮規模，放心交由我們處理吧！</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
                             <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
@@ -283,7 +295,7 @@ async function sendEmail() {
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-left" data-aos-duration="750">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
                             <h3 class="text-3xl font-bold text-gray-900">送審服務</h3>
-                            <p class="mt-2 text-gray-500">我們還提供文件送審服務，除了了解各種文件送審程序和要求，也會確保所有的文件都符合政府單位的要求和標準，同時跟進審批進度，確保在最短的時間內得到批准。</p>
+                            <p class="mt-2 text-gray-500">我們還提供文件送審服務，除了了解各種文件送審程序和要求，也會確保所有的文件都符合政府單位的要求和標準，同時跟進審批進度。</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
                             <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
@@ -295,7 +307,7 @@ async function sendEmail() {
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
                             <h3 class="text-3xl font-bold text-gray-900">作業順暢</h3>
-                            <p class="mt-2 text-gray-500">以優質的服務和專業的技術贏得了客戶的高度評價和信任。我們致力於為客戶提供最好的水電設計服務，我們的客戶都非常滿意！</p>
+                            <p class="mt-2 text-gray-500">我們以優質的服務和專業的技術贏得客戶的高度評價和信任。致力於提供最好的水電設計服務，建築師都非常滿意！</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
                             <div class="aspect-h-2 aspect-w-5 overflow-hidden rounded-lg">
@@ -328,7 +340,7 @@ async function sendEmail() {
                         </div>
                     </li>
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="100">
-                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/k.jpg" alt="" />
+                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/k.png" alt="" />
                         <div class="flex-auto">
                             <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Kevin 黃</h3>
                             <p class="text-base leading-7 text-gray-600">系統主管</p>
@@ -338,9 +350,9 @@ async function sendEmail() {
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
                         <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/q.png" alt="" />
                         <div class="flex-auto">
-                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Q Ni Dan</h3>
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Audrey 黃</h3>
                             <p class="text-base leading-7 text-gray-600">資深設計師</p>
-                            <p class="mt-6 text-base leading-7 text-gray-600">十年以上的MEP設計經驗，負責提供高質量的設計方案，根據項目要求和客戶需求進行水電系統的設計和製圖，確保設計方案符合標準和要求。</p>
+                            <p class="mt-6 text-base leading-7 text-gray-600">十年以上的水電設計經驗，負責提供高質量的設計方案，根據項目要求和客戶需求進行水電系統的設計和製圖，確保設計方案符合標準和要求。</p>
                         </div>
                     </li>
                 </ul>
