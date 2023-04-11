@@ -186,8 +186,8 @@ async function sendEmail() {
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="50">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 16.5V9.75m0 0l3 3m-3-3l-3 3M6.75 19.5a4.5 4.5 0 01-1.41-8.775 5.25 5.25 0 0110.233-2.33 3 3 0 013.758 3.848A3.752 3.752 0 0118 19.5H6.75z" />
+                                    <svg class="h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
                                     </svg>
                                 </div>
                                 電氣設計
@@ -198,8 +198,8 @@ async function sendEmail() {
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="100">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.288 15.038a5.25 5.25 0 017.424 0M5.106 11.856c3.807-3.808 9.98-3.808 13.788 0M1.924 8.674c5.565-5.565 14.587-5.565 20.152 0M12.53 18.22l-.53.53-.53-.53a.75.75 0 011.06 0z" />
                                     </svg>
                                 </div>
                                 弱電設計
@@ -210,8 +210,12 @@ async function sendEmail() {
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="150">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 115.44 122.88" class="w-6 h-6 text-white" fill="#ffffff" xml:space="preserve">
+                                        <g>
+                                            <path
+                                                d="M15.78,85.7c2.67,12.4,10.69,18.59,10.69,24.79c0,6.2-2.67,12.4-10.69,12.4c-8.02,0-10.69-6.2-10.69-12.4 C5.09,104.29,13.11,98.09,15.78,85.7L15.78,85.7z M98.41,39.73H76.4l5.49,20.46h16.48l0.05,0V39.73L98.41,39.73z M75.57,36.65 h22.84V32.1c0-0.75,0.31-1.44,0.8-1.93c0.04-0.04,0.08-0.08,0.13-0.11c0.48-0.43,1.12-0.69,1.81-0.69h11.56 c0.75,0,1.43,0.31,1.93,0.8l0,0l0,0c0.49,0.49,0.8,1.18,0.8,1.93v36.47c0,0.75-0.31,1.44-0.8,1.93c-0.04,0.04-0.08,0.08-0.13,0.11 c-0.48,0.43-1.12,0.69-1.81,0.69h-11.56c-0.75,0-1.43-0.31-1.93-0.8l0,0l0,0c-0.49-0.49-0.8-1.18-0.8-1.93v-5.31l-0.05,0h-16.2 c-1.42,6.38-5.49,10.85-10.69,13.46c-3.72,1.87-8.02,2.79-12.33,2.78c-4.3,0-8.62-0.93-12.4-2.74c-5.52-2.65-9.89-7.18-11.4-13.51 h-0.85v0c-2.54,0.1-4.42,0.7-5.71,1.76c-1.21,1-1.92,2.48-2.17,4.41v7.76c0,0.85-0.69,1.54-1.54,1.54H1.54 C0.69,78.73,0,78.04,0,77.19V60.38h0c0-0.09,0.01-0.17,0.02-0.26c1.13-6.6,3.62-11.99,7.64-15.98c4-3.97,9.48-6.51,16.62-7.46 c0.11-0.02,0.22-0.04,0.34-0.04h17.93l3.11-10.59c0.2-0.67,0.81-1.1,1.47-1.1v0h5.14V13.34H39.71c-1.84,0-3.5-0.75-4.71-1.96 c-1.21-1.21-1.96-2.88-1.96-4.71c0-1.84,0.75-3.5,1.96-4.71C36.21,0.75,37.88,0,39.71,0h37.27c1.84,0,3.5,0.75,4.71,1.96 c1.21,1.21,1.96,2.88,1.96,4.71c0,1.84-0.75,3.5-1.96,4.71c-1.21,1.21-2.88,1.96-4.71,1.96H65.12v11.61h6.14 c0.74,0,1.36,0.52,1.51,1.22L75.57,36.65L75.57,36.65z M62.04,24.95V13.34h-6.69v11.61H62.04L62.04,24.95z M35.66,60.19l6-20.46 H24.68c-6.43,0.86-11.33,3.1-14.85,6.59c-3.52,3.49-5.72,8.27-6.75,14.18v15.15h20.46v-6.31c0-0.09,0.01-0.17,0.02-0.26 c0.34-2.74,1.41-4.9,3.27-6.43c1.81-1.5,4.33-2.34,7.61-2.46l0.05,0v-0.01H35.66L35.66,60.19z M38.26,62.24 c1.2,5.51,4.98,9.46,9.8,11.77c3.37,1.61,7.23,2.43,11.08,2.44c3.84,0,7.66-0.81,10.95-2.46c4.53-2.28,8.04-6.17,9.16-11.75 l-9.17-34.2H48.29l-3.11,10.59l-6.87,23.43C38.3,62.11,38.28,62.18,38.26,62.24L38.26,62.24z M76.99,3.08H39.71 c-0.99,0-1.88,0.4-2.54,1.06c-0.65,0.65-1.06,1.55-1.06,2.54c0,0.99,0.41,1.88,1.06,2.54c0.65,0.65,1.55,1.06,2.54,1.06h37.27 c0.99,0,1.88-0.41,2.54-1.06c0.65-0.65,1.06-1.55,1.06-2.54c0-0.99-0.41-1.88-1.06-2.54C78.87,3.48,77.97,3.08,76.99,3.08 L76.99,3.08z M112.36,32.44h-10.87v35.79h10.87V32.44L112.36,32.44z"
+                                            />
+                                        </g>
                                     </svg>
                                 </div>
                                 給排水設計
@@ -222,8 +226,9 @@ async function sendEmail() {
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="150">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
                                     </svg>
                                 </div>
                                 消防設計
@@ -234,8 +239,12 @@ async function sendEmail() {
                         <div class="relative pl-16" data-aos="fade-up" data-aos-delay="200">
                             <dt class="text-base font-semibold leading-7 text-gray-900">
                                 <div class="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500">
-                                    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M7.864 4.243A7.5 7.5 0 0119.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 004.5 10.5a7.464 7.464 0 01-1.15 3.993m1.989 3.559A11.209 11.209 0 008.25 10.5a3.75 3.75 0 117.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 01-3.6 9.75m6.633-4.596a18.666 18.666 0 01-2.485 5.33" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white">
+                                        <path
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                            d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m5.231 13.481L15 17.25m-4.5-15H5.625c-.621 0-1.125.504-1.125 1.125v16.5c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9zm3.75 11.625a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"
+                                        />
                                     </svg>
                                 </div>
                                 送審服務
@@ -328,7 +337,7 @@ async function sendEmail() {
                 </div>
                 <br />
                 <div class="mx-auto max-w-2xl sm:text-center" data-aos="fade-up" data-aos-duration="750">
-                    <iframe class="w-full h-96" src="https://www.youtube.com/embed/KPAl35s7Jow" title="捷勝設計" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mx-auto" width="594" height="334" src="https://www.youtube.com/embed/tEk5MMotRN8" title="捷勝設計 - 五大管道設計服務" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
@@ -358,7 +367,7 @@ async function sendEmail() {
                 </ul>
             </div>
         </div>
-
+        you
         <!-- Contact Section -->
         <div class="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8 overflow-x-hidden" id="contact-section">
             <div class="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]" aria-hidden="true"></div>

@@ -28,10 +28,13 @@ const getCategoryName = (id: number) => {
         <img src="@/assets/logo.png" alt="logo" class="w-full" />
     </a>
     <hr />
+
+    <div class="text-center mt-8">
+        <h1 class="text-4xl font-bold md:tracking-tight md:text-5xl text-gray-700">{{ post.data.value.title.rendered }}</h1>
+    </div>
     <div class="max-w-2xl px-6 py-16 mx-auto space-y-12">
         <article class="space-y-8">
             <div class="space-y-6">
-                <h1 class="text-4xl font-bold md:tracking-tight md:text-5xl text-gray-700">{{ post.data.value.title.rendered }}</h1>
                 <div class="flex flex-col items-start justify-between w-full md:flex-row md:items-center dark:text-gray-400">
                     <div class="flex items-center md:space-x-2">
                         <!-- <img src="https://source.unsplash.com/75x75/?portrait" alt="" class="w-4 h-4 border rounded-full" /> -->
