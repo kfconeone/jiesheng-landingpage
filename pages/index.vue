@@ -3,7 +3,7 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import gsap from "gsap";
-const tags = await useAsyncData<any>("categories", () => $fetch("/api/tags"));
+const tags = await useAsyncData<any>("tags", () => $fetch("/api/tags"));
 const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
 
 // console.log(tagStrings);
