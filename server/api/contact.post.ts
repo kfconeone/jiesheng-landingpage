@@ -20,13 +20,45 @@ export default defineEventHandler(async (event) => {
         text: `${body.message}, 電話${body.phone}, email${body.email}`, // replace with the email body
     };
 
-    // send the email
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            return { error };
-        } else {
-            console.log("Email sent: " + info.response);
-            return { info };
-        }
-    });
+    return await sendMail(transporter, mailOptions);
+
+    // let isSend = false;
+    // // send the email
+    // transporter.sendMail(mailOptions, (error, info) => {
+    //     if (error) {
+    //         return {
+    //             status: 500,
+    //             error: error,
+    //         };
+    //     } else {
+    //         console.log("Email sent: " + info.response);
+    //         return {
+    //             status: 200,
+    //             info: info,
+    //         };
+    //     }
+    // });
 });
+
+function sendMail(transporter: any, mailOptions: any) {
+    return new Promise((resolve, reject) => {
+        // set initial value of isSend to false
+        let isSend = false;
+
+        // send the email
+        transporter.sendMail(mailOptions, (error: any, info: any) => {
+            if (error) {
+                reject({
+                    status: 500,
+                    error: error,
+                });
+            } else {
+                console.log("Email sent: " + info.response);
+                resolve({
+                    status: 200,
+                    info: info,
+                });
+            }
+        });
+    });
+}
