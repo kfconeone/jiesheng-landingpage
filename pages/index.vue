@@ -46,7 +46,7 @@ async function sendEmail() {
         });
         return;
     }
-    let res = await useFetch("https://www.jiesdesign.com/api/contact", {
+    let res = await $fetch("https://www.jiesdesign.com/api/contact", {
         method: "POST",
         body: contactUsForm.value,
     });
