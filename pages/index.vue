@@ -364,6 +364,14 @@ async function sendEmail() {
                             <p class="mt-6 text-base leading-7 text-gray-600">十年以上的水電設計經驗，負責提供高質量的設計方案，根據項目要求和客戶需求進行水電系統的設計和製圖，確保設計方案符合標準和要求。</p>
                         </div>
                     </li>
+                    <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="150">
+                        <img class="aspect-[4/5] w-52 flex-none rounded-2xl object-cover" src="@/assets/Milton.png" alt="" />
+                        <div class="flex-auto">
+                            <h3 class="text-lg font-semibold leading-8 tracking-tight text-blue-800">Milton 鄒</h3>
+                            <p class="text-base leading-7 text-gray-600">機電技師</p>
+                            <p class="mt-6 text-base leading-7 text-gray-600">擁有國家專技人員電機技師證照的專業人士，具備豐富的電機相關知識和技能，且非常注重細節和精度，對於工作的質量始終保持高標準。能夠提供專業的建議和解決方案。</p>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
