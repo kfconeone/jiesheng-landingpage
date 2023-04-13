@@ -46,10 +46,12 @@ async function sendEmail() {
         });
         return;
     }
-    await useFetch("/api/contact", {
+    let res = await useFetch("/api/contact", {
         method: "POST",
         body: contactUsForm.value,
     });
+
+    console.log(res);
 
     Swal.fire({
         icon: "success",

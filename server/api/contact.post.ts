@@ -23,9 +23,10 @@ export default defineEventHandler(async (event) => {
     // send the email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
-            console.log(error);
+            return error;
         } else {
             console.log("Email sent: " + info.response);
+            return info;
         }
     });
     console.log(body);
