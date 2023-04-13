@@ -51,8 +51,8 @@ async function sendEmail() {
         body: contactUsForm.value,
     });
 
-    console.log(res.data.value);
-    console.log(res.error.value);
+    // console.log(res.data.value);
+    // console.log(res.error.value);
 
     Swal.fire({
         icon: "success",
