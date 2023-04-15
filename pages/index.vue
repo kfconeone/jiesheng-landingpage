@@ -340,7 +340,7 @@ async function sendEmail() {
                 </div>
                 <br />
                 <div class="mx-auto max-w-2xl sm:text-center" data-aos="fade-up" data-aos-duration="750">
-                    <iframe class="mx-auto" width="594" height="334" src="https://www.youtube.com/embed/tEk5MMotRN8" title="捷勝設計 - 五大管道設計服務" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    <iframe class="mx-auto w-full" width="594" height="334" src="https://www.youtube.com/embed/tEk5MMotRN8" title="捷勝設計 - 五大管道設計服務" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
                 <ul role="list" class="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-6 gap-y-20 sm:grid-cols-2 lg:max-w-4xl lg:gap-x-8 xl:max-w-none">
                     <li class="flex flex-col gap-6 xl:flex-row" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">
