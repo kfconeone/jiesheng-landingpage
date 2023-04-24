@@ -3,8 +3,8 @@ import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import gsap from "gsap";
-const tags = await useAsyncData<any>("tags", () => $fetch("/api/tags"));
-const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
+// const tags = await useAsyncData<any>("tags", () => $fetch("/api/tags"));
+// const tagStrings = tags.data.value.map((tag: any) => tag.name).join(", ");
 
 // console.log(tagStrings);
 var isMenuOpen = ref(false);
@@ -76,7 +76,7 @@ async function sendEmail() {
         <Meta name="description" content="捷勝設計，專業的水電設計團隊" />
         <Meta name="og:title" content="捷勝設計，專業的水電設計團隊" />
         <Meta name="og:description" content="捷勝設計，專業的水電設計團隊" />
-        <Meta name="keywords" :content="tagStrings" />
+        <Meta name="keywords" content="捷勝設計,MEP,水電設計,機電設計,五大管線,建築師,營造,自地自建,電氣,弱電,消防,電信" />
     </Head>
     <div>
         <!-- Hero Section -->
