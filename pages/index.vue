@@ -252,7 +252,7 @@ async function sendEmail() {
                                 </div>
                                 送審服務
                             </dt>
-                            <dd class="mt-2 text-base leading-7 text-gray-600">我們提供設計送審服務，讓您的建築項目快速且順利的通過審查程序！</dd>
+                            <dd class="mt-2 text-base leading-7 text-gray-600">我們提供電氣、電信、自來水、汙水套繪申請、汙水開工申請、消防等五大管線送審服務，讓您的建築項目快速且順利的通過審查程序！</dd>
                         </div>
                     </dl>
                 </div>
