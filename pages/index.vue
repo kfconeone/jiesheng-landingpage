@@ -274,7 +274,7 @@ async function sendEmail() {
         <!-- Feature Section -->
         <div class="bg-white overflow-x-hidden" id="feature-section">
             <div class="mx-auto max-w-2xl px-4 py-24 sm:px-6 sm:py-32 lg:max-w-7xl lg:px-8">
-                <div class="mx-auto max-w-3xl text-center">
+                <div class="mx-auto max-w-3xl sm:text-center">
                     <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">我們的特色</h2>
                     <p class="mt-4 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">我們的專業團隊由資深設計師與技師組成，從透天厝到體育場，從小工廠到系統廠都駕輕就熟</p>
                 </div>
@@ -282,7 +282,7 @@ async function sendEmail() {
                 <div class="mt-16 space-y-16">
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-left" data-aos-duration="750">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
-                            <h3 class="text-3xl font-bold text-gray-900">資深技師</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">資深技師</h3>
                             <p class="mt-2 text-gray-500">我們團隊的水電技師有十多年相關經驗，善於與建築師、工程師和營造團隊密切合作了解客戶的需求和要求，並為他們提供高品質的設計方案。</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
@@ -294,7 +294,7 @@ async function sendEmail() {
 
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
-                            <h3 class="text-3xl font-bold text-gray-900">從透天厝到大工廠</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">從透天厝到大工廠</h3>
                             <p class="mt-2 text-gray-500">從透天厝到集合住宅，從小工廠到系統廠，我們的團隊對於各種類型和規模的項目都有處理經驗；您無需顧慮規模，放心交由我們處理吧！</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
@@ -306,7 +306,7 @@ async function sendEmail() {
 
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-left" data-aos-duration="750">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-1">
-                            <h3 class="text-3xl font-bold text-gray-900">送審服務</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">送審服務</h3>
                             <p class="mt-2 text-gray-500">我們還提供文件送審服務，除了了解各種文件送審程序和要求，也會確保所有的文件都符合政府單位的要求和標準，同時跟進審批進度。</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-6 xl:col-start-5">
@@ -318,7 +318,7 @@ async function sendEmail() {
 
                     <div class="flex flex-col-reverse lg:grid lg:grid-cols-12 lg:items-center lg:gap-x-8" data-aos="fade-right">
                         <div class="mt-6 lg:col-span-5 lg:row-start-1 lg:mt-0 xl:col-span-4 lg:col-start-8 xl:col-start-9">
-                            <h3 class="text-3xl font-bold text-gray-900">作業順暢</h3>
+                            <h3 class="text-2xl font-bold text-gray-900">作業順暢</h3>
                             <p class="mt-2 text-gray-500">我們以優質的服務和專業的技術贏得客戶的高度評價和信任。致力於提供最好的水電設計服務，建築師都非常滿意！</p>
                         </div>
                         <div class="flex-auto lg:col-span-7 lg:row-start-1 xl:col-span-8 lg:col-start-1">
@@ -327,6 +327,32 @@ async function sendEmail() {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Flow Section -->
+        <div class="bg-white py-6 sm:placeholder-gray-600" id="team-section">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl sm:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">設計流程</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">透明、標準的流程，讓您更準確的規劃專案。</p>
+                </div>
+                <br />
+                <img data-aos="fade-up" data-aos-duration="750" data-aos-delay="50" src="@/assets/processFlow.png" />
+            </div>
+        </div>
+
+        <!-- Service Range Section -->
+        <div class="bg-white py-6 sm:py-6" id="team-section">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl sm:text-center">
+                    <h2 class="text-3xl font-bold tracking-tight text-blue-800 sm:text-4xl" data-aos="fade-up" data-aos-duration="750">服務範圍</h2>
+                    <p class="mt-6 text-lg leading-8 text-gray-500" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50">從台中出發，捷勝設計處理的案件遍及全台，無論您的案件或事務所位於何處，我們都樂於為您服務，立刻<a href="#contact-section" class="underline text-2xl">聯絡我們</a>吧！</p>
+                </div>
+                <br />
+                <div class="w-full flex justify-center">
+                    <img class="max-w-xl" data-aos="fade-up" data-aos-duration="750" data-aos-delay="50" src="@/assets/range.png" />
                 </div>
             </div>
         </div>
@@ -429,8 +455,8 @@ async function sendEmail() {
         </div>
     </div>
     <br />
-    <div class="fixed bottom-4 right-4">
-        <div class="max-w-xs rounded shadow-lg bg-white relative z-10 pt-8" :class="isContactOpen ? '' : 'invisible'">
+    <div class="fixed bottom-4 right-4 z-10">
+        <div class="max-w-xs rounded shadow-lg bg-white relative pt-8" :class="isContactOpen ? '' : 'hidden'">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 absolute right-2 top-2" @click="isContactOpen = false">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
             </svg>
@@ -445,6 +471,6 @@ async function sendEmail() {
                 <p class="text-gray-700 text-base">點擊QRCode直接與我們聯繫！</p>
             </div>
         </div>
-        <img src="@/assets/line-logo.png" class="absolute right-0 bottom-0 w-12 h-12 lg:w-16 lg:h-16" @click="isContactOpen = true" />
     </div>
+    <img src="@/assets/line-logo.png" class="fixed bottom-4 right-4 w-12 h-12 lg:w-16 lg:h-16" @click="isContactOpen = true" />
 </template>
